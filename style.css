@@ -1,74 +1,116 @@
 body {
-    background-color: #fafafa
+  background-color: #fafafa
+}
+
+div {
+padding-bottom: 20px;
 }
 
 h1 {
-    color: purple;
-    font-family: sans-serif;
-    text-decoration: underline;
+  color: purple;
+  font-family: sans-serif;
+  text-decoration: underline;
 }
 
 p {
-    font-size: 1.1em;
-    font-family: sans-serif;
-}
-
-#second {
-    font-family: sans-serif;
-    font-size: 0.9em;
-    padding-bottom: 15px
-}
-
-input, button {
-    font-size: 1em;
-    padding:6px 10px 5px 10px;
-}
-
-button {
-    background-color: purple;
-    border-color: plum;
-    color: #fff;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 30px 0 0 0;
+  font-size: 1.1em;
+  line-height: 1.4;
   font-family: sans-serif;
 }
 
+#second {
+  font-family: sans-serif;
+  font-size: 0.9em;
+  padding-bottom: 15px
+}
+
+#third {
+font-size: 1em;
+font-weight: 700;
+color: purple;
+margin-top: 10px;
+margin-bottom: 10px; 
+}
+
+input, button {
+  font-size: 1em;
+  padding:6px 10px 5px 10px;
+}
+
+
+
+label {
+font-size: 1em;
+padding:6px 10px 5px 10px;
+font-family: sans-serif;
+}
+
+button {
+  background-color: purple;
+  border-color: plum;
+  color: #fff;
+}
+
+ul {
+list-style-type: none;
+padding: 0;
+margin: 30px 0 0 0;
+font-family: sans-serif;
+}
+
 @media (min-width: 781px) {
-  ul {
-    width: 40%;
+p,
+ul,
+#userinput {
+  width: 40%;
 }
 }
 
-ul .elem {
-  cursor: pointer;
-  background-color: white;
-  padding: 12px;
-  font-size: 16px;
-  letter-spacing: 0.2px;
-  display: block;
-  position: relative;
+@media (max-width: 781px) {
+p,
+ul,
+#userinput {
+  width: 90%;
+}
 }
 
-.elem {
-  border-bottom: 1px solid purple;
+#elem {
+cursor: pointer;
+background-color: white;
+padding: 12px;
+font-size: 16px;
+letter-spacing: 0.2px;
+display: block;
+position: relative;
+border-bottom: 1px solid purple;
+margin-bottom: 5px;
 }
 
-li.elem.done {
-    text-decoration: line-through;
+li#elem.done {
+  text-decoration: line-through;
+}
+
+.line {
+cursor: pointer;
+position: absolute;
+top: 50%;
+right: 7.5%;
+padding: 10px 14px;
+transform: translate(0%, -50%);
+font-weight: 600;
 }
 
 .close {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  right: 0%;
-  padding: 12px 16px;
-  transform: translate(0%, -50%);
-  font-weight: 600;
+cursor: pointer;
+position: absolute;
+top: 50%;
+right: 0%;
+padding: 11px 13px;
+transform: translate(0%, -50%);
+font-weight: 600;
 }
 
-.close:hover {background: magenta;}
+.line:hover,
+.close:hover {
+background: magenta;
+}

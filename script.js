@@ -2,7 +2,8 @@ var button = document.getElementById("enter");
 var input = document.getElementById("userinput");
 var ul = document.querySelector("ul");
 var list = document.getElementsByTagName("li");
-var item = document.getElementsByClassName('elem');
+var item = document.getElementById("elem");
+var h = document.getElementById("prio high");
 var i;
 
 //check if input field is empty//
@@ -13,16 +14,26 @@ function inputLength() {
 //add new item to the bottom of the list//
 function createListElement() {
   var li = document.createElement("li");
-  li.appendChild(document.createTextNode(input.value));
+  li.appendChild(document.createTextNode(input.value));	
   ul.appendChild(li);
-  li.className = "elem";
+  li.id = "elem";
+  li.contentEditable = true;
+	
+	var done = document.createElement("button");
+	var txt = document.createTextNode("\u2713");
+	done.className = "line";
+	done.contentEditable = false;
+  done.appendChild(txt)
+  li.appendChild(done);
+	
   var fini = document.createElement("button");
   var txt = document.createTextNode("\u00D7");
   fini.className = "close";
   fini.appendChild(txt)
   li.appendChild(fini);
+	
   input.value = "";
-
+	
   delBtn();
   strike();
 }
@@ -49,9 +60,9 @@ input.addEventListener("keypress", addListAfterKeypress);
 
 //remove new list item when close button is clicked//
 function delBtn(){
-	var btn = document.getElementsByClassName("close");
-    for (i = 0; i < btn.length; i++) {
-      btn[i].onclick = function() {
+	var delBtn = document.getElementsByClassName("close");
+    for (i = 0; i < delBtn.length; i++) {
+      delBtn[i].onclick = function() {
         this.parentNode.remove()
     }
   }
@@ -59,11 +70,10 @@ function delBtn(){
 
 //add line-through when list item is clicked//
 function strike(){
-	for( i=0; i<list.length; i++){
-	list[i].addEventListener('click', changeClass)
+	var strike = document.getElementsByClassName("line");
+		for( i=0; i < strike.length; i++){
+			strike[i].onclick = function() {
+        this.parentNode.classList.toggle('done');
+    }
 	}
-}
-
-function changeClass(){
-	this.classList.toggle('done');
 }
